@@ -6,13 +6,13 @@ package com.github.reiseburo.verspaetung.zk
 class ConsumerOffset {
     String topic
     String groupName
-    Integer offset
+    Long offset
     Integer partition
 
     ConsumerOffset() {
     }
 
-    ConsumerOffset(String topic, Integer partition, Integer offset) {
+    ConsumerOffset(String topic, Integer partition, Long offset) {
         this.topic = topic
         this.partition = partition
         this.offset = offset

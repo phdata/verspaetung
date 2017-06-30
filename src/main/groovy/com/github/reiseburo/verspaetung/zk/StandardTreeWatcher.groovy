@@ -39,7 +39,7 @@ ChildData{path='/consumers/offtopic-spock-test/offsets/topic/7', stat=8595174473
 
         try {
             offset.partition = new Integer(pathParts[5])
-            offset.offset = new Integer(new String(data.data))
+            offset.offset = new Long(new String(data.data))
         }
         catch (NumberFormatException ex) {
             logger.error("Failed to parse an Integer: ${data}")

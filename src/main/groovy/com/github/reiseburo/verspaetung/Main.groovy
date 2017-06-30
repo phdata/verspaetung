@@ -87,7 +87,7 @@ class Main {
         /* consumerOffsets is where we will keep all the offsets from Zookeeper
          * from the Kafka consumers
          */
-        ConcurrentHashMap<KafkaConsumer, Integer> consumerOffsets = new ConcurrentHashMap<>()
+        ConcurrentHashMap<KafkaConsumer, Long> consumerOffsets = new ConcurrentHashMap<>()
 
         /* topicOffsets is where the KafkaPoller should be writing all of it's
          * latest offsets from querying the Kafka brokers
@@ -173,7 +173,7 @@ class Main {
 
     static void registerMetricFor(KafkaConsumer consumer,
                                   ConcurrentHashMap<KafkaConsumer, ConsumerGauge> consumerGauges,
-                                  ConcurrentHashMap<KafkaConsumer, Integer> consumerOffsets,
+                                  ConcurrentHashMap<KafkaConsumer, Long> consumerOffsets,
                                   ConcurrentHashMap<TopicPartition, Long> topicOffsets) {
         /*
          * Bail early if we already ahve our Consumer registered

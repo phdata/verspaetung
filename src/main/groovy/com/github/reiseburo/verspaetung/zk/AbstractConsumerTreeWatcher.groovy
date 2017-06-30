@@ -12,7 +12,7 @@ import org.apache.curator.framework.recipes.cache.TreeCacheEvent
  */
 @TypeChecked
 abstract class AbstractConsumerTreeWatcher extends AbstractTreeWatcher {
-    protected AbstractMap<KafkaConsumer, Integer> consumerOffsets
+    protected AbstractMap<KafkaConsumer, Long> consumerOffsets
     protected AbstractSet<String> watchedTopics
     protected List<Closure> onConsumerData = []
 
