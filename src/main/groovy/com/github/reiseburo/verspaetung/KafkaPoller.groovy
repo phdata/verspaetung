@@ -134,6 +134,7 @@ class KafkaPoller extends Thread {
         Long offset = latestFromLeader(leaderId, tp.topic, partitionId)
 
         this.topicOffsetMap[tp] = offset
+        LOGGER.debug("Found Topic offset: ${tp} ${offset}")
     }
 
     private Long latestFromLeader(Integer leaderId, String topic, Integer partition) {

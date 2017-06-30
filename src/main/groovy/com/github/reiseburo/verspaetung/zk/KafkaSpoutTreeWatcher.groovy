@@ -44,7 +44,7 @@ class KafkaSpoutTreeWatcher extends AbstractConsumerTreeWatcher {
         offset.topic = offsetData.topic
         offset.partition = offsetData.partition
         offset.offset = offsetData.offset
-
+        logger.debug("Found KafkaSpout offset: ${offset}")
         return offset
     }
 
